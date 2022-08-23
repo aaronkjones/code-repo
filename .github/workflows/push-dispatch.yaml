@@ -26,6 +26,7 @@ jobs:
           done
 
   dispatch:
+    if: ${{ needs.changed-build.outputs.changed-build}}
     runs-on: ubuntu-latest
     name: Dispatch payload
     needs: changed-build
